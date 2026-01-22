@@ -1,114 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kate - Researcher</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kateryna (Kate) Nechyporenko | Research</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .section { padding: 60px 0; }
-    .container { max-width: 900px; }
-    header {
-      background: url('s.jpg') no-repeat center center;
-      background-size: cover;
-      color: white;
-      text-align: center;
-      padding: 100px 0;
+    :root{
+      --ink:#111827;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#f6f7fb;
+      --accent:#111827;
     }
-    header h1, header p {
-      background: rgba(0, 0, 0, 0.5);
-      display: inline-block;
-      padding: 10px 15px;
-      border-radius: 5px;
+    body { font-family: 'Inter', sans-serif; color: var(--ink); background: var(--bg); }
+    .container { max-width: 980px; }
+    .section { padding: 64px 0; }
+    .chip {
+      display:inline-flex; align-items:center; gap:.4rem;
+      border:1px solid rgba(17,24,39,.12);
+      padding:.35rem .6rem; border-radius: 999px;
+      background:#fff; color:var(--ink); font-size:.9rem;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
+    .hero {
+      background:
+        linear-gradient(180deg, rgba(17,24,39,.78), rgba(17,24,39,.78)),
+        url('s.jpg') center/cover no-repeat;
+      color:#fff;
+      padding: 88px 0;
     }
-    nav a:hover {
-      text-decoration: underline;
+    .hero-card{
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 18px;
+      padding: 22px;
+      backdrop-filter: blur(6px);
     }
+    .hero h1 { font-weight: 800; letter-spacing: -0.02em; }
+    .hero p { color: rgba(255,255,255,.9); }
+    .nav-link { color: rgba(255,255,255,.85) !important; }
+    .nav-link:hover { color:#fff !important; text-decoration: underline; }
+    .navbar { backdrop-filter: blur(10px); }
+    .card {
+      border: 1px solid rgba(17,24,39,.08);
+      border-radius: 18px;
+      background: var(--card);
+      box-shadow: 0 10px 22px rgba(17,24,39,.06);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(17,24,39,.10);
+    }
+    .meta { color: var(--muted); font-size: .95rem; }
+    .h-title { font-weight: 800; letter-spacing: -0.01em; }
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
+      margin-bottom: 18px;
+    }
+    .section-title h2{ font-weight:800; margin:0; letter-spacing:-0.02em; }
+    .section-title .meta{ margin:0; }
+    .btn-dark { border-radius: 999px; padding: .55rem .9rem; }
+    .btn-outline-light { border-radius: 999px; }
+    .list-clean { margin:0; padding-left: 1.1rem; }
+    .divider { height:1px; background: rgba(17,24,39,.08); margin: 22px 0; }
+    .footer {
+      background:#0b1220;
+      color: rgba(255,255,255,.85);
+      padding: 28px 0;
+    }
+    .footer a { color:#fff; }
+    .badge-soft{
+      background: rgba(17,24,39,.06);
+      border: 1px solid rgba(17,24,39,.10);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: .3rem .6rem;
+      font-weight: 600;
+      font-size: .85rem;
+    }
+    .small-link { color: var(--ink); text-decoration: none; }
+    .small-link:hover { text-decoration: underline; }
   </style>
 </head>
+
 <body>
-  <!-- Navigation -->
+  <!-- NAV -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#">Kate Nechyporenko</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#conferences">Conferences</a></li>
           <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
-          <li class="nav-item"><a class="nav-link" href="#activities">Activities</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Header -->
-  <header>
-    <h1>Kateryna (Kate) Nechyporenko</h1>
-    <p>PhD Researcher in Mathematics | Living Systems Institute, University of Exeter</p>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <h1 class="mb-2">Kateryna (Kate) Nechyporenko</h1>
+        <p class="mb-3">
+          PhD Researcher in Mathematics<br />
+          Living Systems Institute, University of Exeter
+        </p>
+
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <span class="chip">Mathematical neuroscience</span>
+          <span class="chip">Nonlinear dynamics</span>
+          <span class="chip">Neuroendocrine systems</span>
+          <span class="chip">Modelling + data analysis</span>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-outline-light btn-sm" href="#publications">See publications</a>
+          <a class="btn btn-outline-light btn-sm" href="MY_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn btn-outline-light btn-sm" href="https://github.com/ktrnnchprnk" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-outline-light btn-sm" href="https://www.linkedin.com/in/kateryna-nechyporenko-178489194/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- About -->
+  <!-- ABOUT -->
   <section id="about" class="section">
     <div class="container">
-      <h2>About Me</h2>
-      <p>I am doing a PhD at the University of Exeter, currently in my 3rd year. 
-      My primary research interests are <strong>mathematical modelling of neuroendocrine systems</strong> 
-      and <strong>nonlinear dynamics</strong>. 
-      Feel free to reach out at <em>kn356@exeter.ac.uk</em>.</p>
+      <div class="section-title">
+        <h2>About</h2>
+        <p class="meta">Exeter, UK</p>
+      </div>
+
+      <div class="card p-4">
+        <p class="mb-3">
+          I am a PhD researcher in Mathematics at the University of Exeter (since Sept 2022), supervised by Krasimira Tsaneva-Atanasova and Jamie Walker.
+          My work focuses on dynamical mechanisms underlying state transitions in neural networks, with applications in mathematical neuroscience and neuroendocrinology.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <div class="fw-bold">Email</div>
+                <div class="meta">
+                  <a class="small-link" href="mailto:nechyporenkok@gmail.com">nechyporenkok@gmail.com</a>
+                  <span class="meta"> | </span>
+                  <a class="small-link" href="mailto:kn356@exeter.ac.uk">kn356@exeter.ac.uk</a>
+                </div>
+              </div>
+              <span class="badge-soft">Open to collaborations</span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div>
+              <div class="fw-bold">Phone</div>
+              <div class="meta">+44 7742 288931</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div>
+          <div class="fw-bold mb-2">Education (latest first)</div>
+          <ul class="list-clean">
+            <li><strong>University of Exeter</strong> | PhD in Mathematics (Sept 2022 to present)</li>
+            <li><strong>University of Exeter</strong> | MSci in Mathematical Modelling (Biology and Medicine) (Sept 2021 to Sept 2022) | Distinction</li>
+            <li><strong>University of Glasgow</strong> | BSc in Mathematics (Sept 2017 to May 2021) | 1st class</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Publications -->
-  <section id="publications" class="bg-light section">
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="section">
     <div class="container">
-      <h2>Publications</h2>
+      <div class="section-title">
+        <h2>Publications</h2>
+        <p class="meta">Latest first</p>
+      </div>
+
       <div class="row row-cols-1 g-4">
+        <!-- 2026 -->
         <div class="col">
-          <div class="card h-100 p-3">
-            <div class="card-body">
-              <h5 class="card-title">Switching States: Heteroclinic Cycles as Organising Centres of Neuronal Dynamics</h5>
-              <p class="card-text"><strong>Nechyporenko, K.</strong>, Ashwin, P., & Tsaneva-Atanasova, K. (2025). [Preprint]</p>
-              <a href="https://arxiv.org/abs/2507.15519" class="btn btn-sm btn-dark">View Paper</a>
+          <div class="card p-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+              <div>
+                <div class="h-title h5 mb-1">Integrating Models to Decode the GnRH Pulse Generator</div>
+                <div class="meta mb-2"><strong>Nechyporenko, K.</strong>, Ivanova D., Li X.F., Tsaneva-Atanasova K., Voliotis M., O’Byrne K.T. (2026) | bioRxiv preprint</div>
+              </div>
+              <span class="badge-soft">2026</span>
+            </div>
+            <a href="https://www.biorxiv.org/content/10.64898/2026.01.05.697766v1" class="btn btn-sm btn-dark" target="_blank" rel="noopener">View</a>
+          </div>
+        </div>
+
+        <!-- 2025 -->
+        <div class="col">
+          <div class="card p-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+              <div>
+                <div class="h-title h5 mb-1">Switching States: Heteroclinic Cycles as Organising Centres of Neuronal Dynamics</div>
+                <div class="meta mb-2"><strong>Nechyporenko, K.</strong>, Ashwin, P., Tsaneva-Atanasova, K. (2025) | arXiv preprint</div>
+              </div>
+              <span class="badge-soft">2025</span>
+            </div>
+            <a href="https://arxiv.org/abs/2507.15519" class="btn btn-sm btn-dark" target="_blank" rel="noopener">View</a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card p-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+              <div>
+                <div class="h-title h5 mb-1">Amygdala GABA Neurons: Gatekeepers of Stress and Reproduction</div>
+                <div class="meta mb-2">Yu, J., Farjami, S., <strong>Nechyporenko, K.</strong>, Li X.F., Yaseen, H., Lin, Y., Ye, J., Hollings, O., O’Byrne, K.T., Tsaneva-Atanasova, K., Voliotis, M. (2025) | bioRxiv preprint | Accepted to <em>Nature Communications</em></div>
+              </div>
+              <span class="badge-soft">2025</span>
+            </div>
+            <a href="https://doi.org/10.1101/2025.01.06.631361" class="btn btn-sm btn-dark" target="_blank" rel="noopener">View</a>
+          </div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="col">
+          <div class="card p-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+              <div>
+                <div class="h-title h5 mb-1">A Novel Route to Oscillations via non-central SNICeroclinic Bifurcation</div>
+                <div class="meta mb-2"><strong>Nechyporenko, K.</strong>, Ashwin, P., Tsaneva-Atanasova, K. (2024) | arXiv preprint | Accepted to SIADS</div>
+              </div>
+              <span class="badge-soft">2024</span>
+            </div>
+            <a href="https://arxiv.org/abs/2412.12298" class="btn btn-sm btn-dark" target="_blank" rel="noopener">View</a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card p-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+              <div>
+                <div class="h-title h5 mb-1">Neuronal network dynamics in the posterodorsal amygdala: shaping reproductive hormone pulsatility</div>
+                <div class="meta mb-2"><strong>Nechyporenko, K.</strong>, Voliotis, M., Li X.F., Hollings, O., Ivanova, D., Walker, J.J., O’Byrne, K.T., Tsaneva-Atanasova, K. (2024) | <em>Journal of the Royal Society Interface</em></div>
+              </div>
+              <span class="badge-soft">2024</span>
+            </div>
+            <a href="https://doi.org/10.1098/rsif.2024.0143" class="btn btn-sm btn-dark" target="_blank" rel="noopener">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Experience</h2>
+        <p class="meta">Latest first</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Teaching -->
+        <div class="col-lg-6">
+          <div class="card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="h-title h5 mb-1">Teaching</div>
+                <div class="meta">Postgraduate Teaching Assistant, University of Exeter (Nov 2022 to present)</div>
+              </div>
+              <span class="badge-soft">Ongoing</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <ul class="list-clean">
+              <li><strong>MTH3006</strong> Mathematical Biology and Ecology (Sept 2025 to Feb 2026): tutorials, marking</li>
+              <li><strong>MTH0001</strong> Principles of Pure Mathematics (Sept 2024 to Apr 2026): tutorials (calculus)</li>
+              <li><strong>NSCM005</strong> Mathematical Modelling in Biology and Medicine (Sept 2023 to Dec 2025): tutorials (MATLAB, MatCont)</li>
+              <li><strong>MTH3039</strong> Computational Nonlinear Dynamics (Sept 2023 to Dec 2023): tutorials (continuation, MATLAB)</li>
+              <li><strong>MTH3008</strong> Partial Differential Equations (Feb 2023 to Apr 2025): marking</li>
+              <li><strong>PHY1031</strong> Scientific Programming in Python (Jan 2023 to Apr 2023): tutorials (Python basics), marking</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Leadership -->
+        <div class="col-lg-6">
+          <div class="card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="h-title h5 mb-1">Leadership and Academic Engagement</div>
+                <div class="meta">Selected roles and organisation</div>
+              </div>
+              <span class="badge-soft">Latest first</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <ul class="list-clean">
+              <li><strong>Isaac Newton Institute Scoping Meeting</strong>, Cambridge (Dec 2025): Organising Committee Member for “Computation, Modelling, and Statistical Analysis of Physiological and Clinical Brain Signals for Real-Time Classification and Prediction”</li>
+              <li><strong>British Applied Mathematics Colloquium</strong>, Exeter (June 2025): organised minisymposium “Mathematical Insights in Neuroscience: From Theory to Reality”</li>
+              <li><strong>SIAM Conference on Life Sciences</strong>, Portland (May 2024): organised minisymposium “Mathematical Insights in Neuroscience: From Theory to Reality”</li>
+              <li><strong>Living Systems Institute PhD Committee Member</strong>, Exeter (Sept 2023 to May 2025): seminars + community events</li>
+              <li><strong>Mathematical Biology Reading Group</strong>, Exeter (Sept 2023 to present): organiser, including professional development sessions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFERENCES -->
+  <section id="conferences" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Conferences and Workshops</h2>
+        <p class="meta">Latest first</p>
+      </div>
+
+      <div class="card p-4">
+        <ul class="list-clean">
+          <li><strong>2nd Latin American Congress on Industrial and Applied Mathematics</strong>, Valparaiso, Chile (Jul to Aug 2025): talk “Switching States: Heteroclinic Cycles as Organising Centres of Mean-Field Neuronal Dynamics”</li>
+          <li><strong>UK Mathematical Biology Conference</strong>, Birmingham, UK (Jul to Aug 2025): talk “Switching States: Heteroclinic Cycles as Organising Centres of Mean-Field Neuronal Dynamics”</li>
+          <li><strong>Network Physiology Summer Institute</strong>, Como, Italy (Jul to Aug 2025): poster “Switching States: Heteroclinic Cycles as Organising Centres of Mean-Field Neuronal Dynamics”</li>
+          <li><strong>British Applied Mathematics Colloquium</strong>, Exeter, UK (June 2025): poster “Switching States: Heteroclinic Cycles as Organising Centres of Mean-Field Neuronal Dynamics”</li>
+          <li><strong>CAMBAM Symposium</strong>, Montreal, Canada (Jun 2025): poster “Switching States: Heteroclinic Cycles as Organising Centres of Mean-Field Neuronal Dynamics”</li>
+          <li><strong>OIST Computational Neuroscience Course</strong>, Okinawa, Japan (Jun to Jul 2024): project on calcium-trace analysis; hands-on tutorials (NEURON, DeepLabCut, Brian, PyStan)</li>
+          <li><strong>British Society of Neuroendocrinology Annual Meeting</strong>, Aberdeen, UK (Jun 2024): contributed talk submitted (presented by Margaritis Voliotis)</li>
+          <li><strong>British Society of Neuroendocrinology Annual Meeting</strong>, Exeter, UK (Sept 2023): poster “Insights into GABA-glutamate interaction in the posterodorsal medial amygdala”</li>
+          <li><strong>3rd International Workshop on Neurodynamics</strong>, Castro-Urdiales, Spain (Jun 2023): contributed talk “GABA-glutamate functional mechanisms in the posterodorsal medial amygdala: in-silico approach”</li>
+          <li><strong>British Applied Mathematics Colloquium</strong>, Bristol, UK (Mar 2023): contributed talk “Neuronal Network Model of the Medial Amygdala”</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Awards</h2>
+        <p class="meta">Latest first</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="h-title h5 mb-1">Best poster award</div>
+                <div class="meta">Network Physiology Summer Institute</div>
+              </div>
+              <span class="badge-soft">Jul 2025</span>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100 p-3">
-            <div class="card-body">
-              <h5 class="card-title">GABA Neurons in the Amygdala play a central Role in Urocortin-3–Mediated Stress Suppression of Reproduction</h5>
-              <p class="card-text"> <strong>Nechyporenko, K.</strong>, Yu J., Farjami S., Li X. F., Yaseen H., Lin Y., Ye J., Hollings O., de Burgh R., Singh B., O’Byrne K. T., Tsaneva-Atanasova K., Voliotis M(2025). [Preprint]</p>
-              <a href="https://www.biorxiv.org/content/10.1101/2025.01.06.631361v3" class="btn btn-sm btn-dark">View Paper</a>
+
+        <div class="col-md-6">
+          <div class="card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="h-title h5 mb-1">PhD Publication Prize</div>
+                <div class="meta">University of Exeter</div>
+              </div>
+              <span class="badge-soft">Mar 2025</span>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100 p-3">
-            <div class="card-body">
-              <h5 class="card-title">A Novel Route to Oscillations via Non-Central SNICeroclinic Bifurcation</h5>
-              <p class="card-text"><strong>Nechyporenko, K.</strong>, Ashwin, P., & Tsaneva-Atanasova, K. (2024). [Preprint]</p>
-              <a href="https://arxiv.org/abs/2412.12298" class="btn btn-sm btn-dark">View Paper</a>
+
+        <div class="col-md-6">
+          <div class="card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="h-title h5 mb-1">Dean’s Commendation</div>
+                <div class="meta">Postgraduate Research Academic Citizenship</div>
+              </div>
+              <span class="badge-soft">Dec 2024</span>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100 p-3">
-            <div class="card-body">
-              <h5 class="card-title">Neuronal Network Dynamics in the Posterodorsal Amygdala</h5>
-              <p class="card-text"><strong>Nechyporenko, K.</strong>, Voliotis M., Li X-F., Hollings O., Ivanova D., Walker JJ., O’Byrne KT, Tsaneva-Atanasova K.(2024). <em>Journal of the Royal Society Interface</em></p>
-              <a href="https://doi.org/10.1098/rsif.2024.0143" class="btn btn-sm btn-dark">View Paper</a>
+
+        <div class="col-md-6">
+          <div class="card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="h-title h5 mb-1">EPSRC Studentship Award</div>
+                <div class="meta">Funding award</div>
+              </div>
+              <span class="badge-soft">May 2022</span>
             </div>
           </div>
         </div>
@@ -116,57 +412,22 @@
     </div>
   </section>
 
-  <!-- Conferences -->
-  <section id="conferences" class="section">
-    <div class="container">
-      <h2>Conferences and Workshops</h2>
-      <ul class="list-unstyled">
-        <li><strong>British Applied Mathematics Colloquium</strong> (Bristol, UK, 2023) – Contributed talk: "Neuronal Network Model of the Medial Amygdala"</li>
-        <li><strong>NDy’23</strong> (Spain, 2023) – Contributed talk: "GABA-glutamate functional mechanisms in the medial amygdala"</li>
-        <li><strong>BSN Annual Meeting</strong> (Exeter, UK, 2023) – Poster: "Insights into GABA-glutamate interaction in the amygdala"</li>
-        <li><strong>OIST Computational Neuroscience Course</strong> (Japan, 2024)</li>
-        <li><strong>CAMBAM Symposium</strong> (Canada, 2025) – Poster "Switching States: Heteroclinic Cycles as Organising Centres of Mean-Field Neuronal Dynamics"</li>
-        <li><strong>BAMC</strong> (Exeter, UK, 2025) – Organised a minisymposium "Mathematical Insights in Neuroscience: From Theory to Reality" + presented a talk "Switching States: Heteroclinic Cycles as Organising Centres of Mean-Field Neuronal Dynamics"</li>
-        <li><strong>Network Physiology</strong> (Como, Italy, 2025) – Poster "Switching States: Heteroclinic Cycles as Organising Centres of Mean-Field Neuronal Dynamics"</li>
-        <li><strong>UK Mathematical Biology Conference</strong> (Birmingham, UK, 2025) – Talk "Switching States: Heteroclinic Cycles as Organising Centres of Mean-Field Neuronal Dynamics"</li>
-      </ul>
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="container text-center">
+      <div class="mb-2">
+        <strong>Contact</strong>:
+        <a href="mailto:nechyporenkok@gmail.com">nechyporenkok@gmail.com</a>
+        <span style="opacity:.6"> | </span>
+        <a href="mailto:kn356@exeter.ac.uk">kn356@exeter.ac.uk</a>
+      </div>
+      <div class="mb-2">
+        <a href="https://github.com/ktrnnchprnk" target="_blank" rel="noopener">GitHub</a>
+        <span style="opacity:.6"> | </span>
+        <a href="https://www.linkedin.com/in/kateryna-nechyporenko-178489194/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div style="opacity:.75">© 2026 Kateryna (Kate) Nechyporenko</div>
     </div>
-  </section>
-
-  <!-- Awards -->
-  <section id="awards" class="bg-light section">
-    <div class="container">
-      <h2>Awards</h2>
-      <ul>
-        <li>Dean's Commendation for Postgraduate Research Academic Citizenship (2024)</li>
-        <li>PhD publication prize (2025)</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Activities -->
-  <section id="activities" class="section">
-    <div class="container">
-      <h2>Other Activities</h2>
-      <ul>
-        <li>PhD Committee Representative at Living Systems Institute (2023–2025)</li>
-        <li>Member of BSN ECR Sub-Committee (2023–present)</li>
-        <li>Content Creator for 'The Neuroexplorists' (2024–2025)</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer id="contact" class="bg-dark text-white text-center py-4">
-    <p>&copy; 2025 Kate | Contact: 
-      <a href="mailto:kn356@exeter.ac.uk" class="text-white">kn356@exeter.ac.uk</a>
-    </p>
-    <p>
-      <a href="https://www.linkedin.com/in/kateryna-nechyporenko-178489194/" target="_blank" class="text-white text-decoration-none">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="height: 24px; vertical-align: middle; margin-right: 5px;">
-        LinkedIn
-      </a>
-    </p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
